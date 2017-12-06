@@ -1,0 +1,10 @@
+clc
+clear
+load('regression_tmpuse.mat')
+m=train(:,1:900);
+aa=25;
+now_part_train_sample_ind1=[1:1+aa,47:47+aa,412:412+aa,1335:1335+aa];
+rest_part_train_sample_ind1=setdiff((1:1805),now_part_train_sample_ind1);
+options=[];
+options_active(1,1)=2;
+[choose_part_serialss,diff,diff_pos,rank,note]=margin_regression_choose_sample(m,now_part_train_sample_ind1,rest_part_train_sample_ind1,options_active);

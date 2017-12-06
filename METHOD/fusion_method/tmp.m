@@ -1,0 +1,11 @@
+clc
+clear
+rank=[1,3,5,7,9;1,2,3,4,5;3,2,1,4,5];
+mm=[2,3,4,5,9,13,14,15];
+method=8;
+choose_num=4;
+option_agg=[];
+weight=[1,1];
+[new_rank,choose_serial]=agg_rank_w(method,rank,choose_num,weight,option_agg);
+[new_rank1,choose_serial1]=agg_rank(mm(method),rank,choose_num,option_agg);
+cy=new_rank-new_rank1;
